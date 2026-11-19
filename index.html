@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#172219">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ARES Fitness">
+<title>ARES Special Forces Fitness</title>
+<style>
+:root{--bg:#101710;--panel:#1d2a20;--green:#a9c18b;--orange:#d58b43;--white:#f4f5ef;--muted:#aab5a4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,sans-serif;padding-bottom:85px}
+header{padding:28px 20px 18px;background:#172219;border-bottom:1px solid #354535}
+.brand{font-size:12px;color:var(--green);letter-spacing:3px;font-weight:bold}
+h1{font-size:34px;letter-spacing:3px;margin:5px 0}
+.sub{color:var(--muted);font-size:12px}
+main{padding:16px;max-width:650px;margin:auto}
+.card{background:var(--panel);padding:17px;border-radius:15px;margin-bottom:14px;border:1px solid #354535}
+h2{font-size:19px;margin:0 0 14px}
+h3{font-size:15px;margin:8px 0}
+p{color:#d1d9ce;font-size:14px;line-height:1.5}
+small,.muted{color:var(--muted)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:#26372a;border-radius:12px;padding:14px}
+.stat strong{display:block;font-size:25px;margin-top:5px}
+button{border:0;border-radius:10px;padding:12px 15px;background:var(--green);color:#172219;font-weight:700;font-size:14px;cursor:pointer}
+button.secondary{background:#344537;color:white}
+button.orange{background:var(--orange);color:#20180e}
+input,textarea,select{width:100%;padding:13px;border-radius:9px;border:1px solid #52634f;background:#111b13;color:white;margin:7px 0 13px;font-size:16px}
+label{font-size:13px;color:var(--green)}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#172219;border-top:1px solid #40513d;display:flex;justify-content:space-around;padding:9px 3px calc(9px + env(safe-area-inset-bottom));z-index:5}
+.nav button{background:none;color:#b8c4b1;padding:7px 3px;font-size:10px;flex:1}
+.nav button.active{color:var(--green)}
+.nav span{display:block;font-size:20px;margin-bottom:3px}
+.hidden{display:none}
+.item{padding:12px 0;border-bottom:1px solid #3b4939}
+.item:last-child{border:0}
+.tag{color:var(--orange);font-size:11px;font-weight:bold}
+.progress{height:8px;background:#354535;border-radius:9px;overflow:hidden}
+.progress div{height:100%;background:var(--green);width:0}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand">SPECIAL FORCES FITNESS</div>
+ <h1>ARES <span style="color:#a9c18b">◆</span></h1>
+ <div class="sub">IDENTITY · DISCIPLINE · PERFORMANCE</div>
+</header>
+<main>
+<section id="inicio">
+ <div class="card">
+  <div class="tag">CENTRO DE OPERACIONES</div>
+  <h2>Bienvenido, operador 001.</h2>
+  <p>Tu misión: mejorar tu condición física de manera progresiva y sostenible.</p>
+ </div>
+ <div class="stats">
+  <div class="stat"><small>PESO INICIAL</small><strong>108 kg</strong></div>
+  <div class="stat"><small>OBJETIVO</small><strong>Perder grasa</strong></div>
+  <div class="stat"><small>EDAD</small><strong>38 años</strong></div>
+  <div class="stat"><small>FRECUENCIA</small><strong>2 días/semana</strong></div>
+ </div>
+ <div class="card" style="margin-top:14px">
+  <h2>Estado de la misión</h2>
+  <p>Evaluación médica pendiente. Antes de iniciar entrenamiento estructurado, solicita un control de salud y medición de presión arterial.</p>
+  <div class="tag">FASE 01 · BASE FÍSICA</div>
+ </div>
+ <div class="card">
+  <h2>Accesos rápidos</h2>
+  <button onclick="show('entreno')">Ver entrenamiento</button>
+  <button class="secondary" onclick="show('progreso')">Registrar progreso</button>
+ </div>
+</section>
+
+<section id="entreno" class="hidden">
+ <h2>Entrenamiento</h2>
+ <div class="card">
+  <div class="tag">PROGRAMA DE CUATRO SEMANAS</div>
+  <h3>Día A · Fuerza general</h3>
+  <div class="item">Sentarse y levantarse de una silla · 2 × 8-10</div>
+  <div class="item">Remo apoyado · 2 × 10 por lado</div>
+  <div class="item">Flexiones contra la pared · 2 × 8-10</div>
+  <div class="item">Elevación de talones · 2 × 12</div>
+  <h3>Día B · Fuerza y estabilidad</h3>
+  <div class="item">Técnica de bisagra de cadera · 2 × 8</div>
+  <div class="item">Press sentado · 2 × 8-10</div>
+  <div class="item">Remo apoyado · 2 × 10 por lado</div>
+  <div class="item">Activación abdominal · 2 × 5</div>
+  <p>Descansos de 60-90 segundos. Empezar con esfuerzo suave y priorizar la técnica.</p>
+  <p><b>Importante:</b> rutina planificada, pendiente de valoración médica antes de comenzar. No utilizar automáticamente los 10 kg.</p>
+ </div>
+ <div class="card">
+  <h3>Registro de sesión</h3>
+  <label>Sesión realizada</label>
+  <select id="session"><option>Día A</option><option>Día B</option></select>
+  <label>Esfuerzo (1 a 10)</label>
+  <input id="effort" type="number" min="1" max="10" placeholder="Ej. 5">
+  <label>Observaciones</label>
+  <textarea id="sessionNotes" placeholder="Cómo te sentiste..."></textarea>
+  <button onclick="saveSession()">Guardar sesión</button>
+  <p id="sessionResult"></p>
+ </div>
+</section>
+
+<section id="progreso" class="hidden">
+ <h2>Seguimiento físico</h2>
+ <div class="card">
+  <label>Peso actual (kg)</label>
+  <input id="weight" type="number" step=".1" placeholder="108">
+  <label>Perímetro de cintura (cm)</label>
+  <input id="waist" type="number" step=".1" placeholder="Pendiente">
+  <label>Fecha del registro</label>
+  <input id="date" type="date">
+  <button onclick="saveProgress()">Guardar progreso</button>
+ </div>
+ <div class="card">
+  <h3>Historial de peso</h3>
+  <div id="history"><p class="muted">Todavía no hay registros.</p></div>
+ </div>
+</section>
+
+<section id="nutricion" class="hidden">
+ <h2>Nutrición</h2>
+ <div class="card">
+  <h3>Tu estrategia</h3>
+  <p>½ plato: verduras.</p>
+  <p>¼ plato: proteínas.</p>
+  <p>¼ plato: carbohidratos.</p>
+  <p>Agua como bebida principal. Come despacio y evita repetir automáticamente.</p>
+ </div>
+ <div class="card">
+  <h3>Registro de comidas</h3>
+  <label>Comida</label>
+  <select id="mealType"><option>Desayuno</option><option>Almuerzo</option><option>Cena</option><option>Colación</option></select>
+  <label>Alimentos y cantidades</label>
+  <textarea id="meal" placeholder="Describe lo que comiste"></textarea>
+  <button onclick="saveMeal()">Registrar comida</button>
+  <div id="mealHistory"></div>
+ </div>
+</section>
+
+<section id="calendario" class="hidden">
+ <h2>Calendario</h2>
+ <div class="card">
+  <h3>Plan semanal</h3>
+  <div class="item">Lunes · Descanso / actividad cotidiana suave</div>
+  <div class="item">Martes · Día A planificado</div>
+  <div class="item">Miércoles · Recuperación</div>
+  <div class="item">Jueves · Actividad suave según tolerancia</div>
+  <div class="item">Viernes · Día B planificado</div>
+  <div class="item">Sábado y domingo · Recuperación</div>
+  <p>Los días son orientativos y pueden cambiarse.</p>
+ </div>
+</section>
+
+<section id="ia" class="hidden">
+ <h2>ARES AI</h2>
+ <div class="card">
+  <div class="tag">ASISTENTE DE ENTRENAMIENTO</div>
+  <h3>Tu entrenador inteligente</h3>
+  <p>Esta primera versión contiene orientación básica. Todavía no tiene conexión a un servicio de inteligencia artificial.</p>
+  <label>¿En qué necesitas ayuda?</label>
+  <textarea id="question" placeholder="Escribe tu consulta..."></textarea>
+  <button onclick="askCoach()">Consultar orientación</button>
+  <p id="answer"></p>
+ </div>
+</section>
+
+<section id="perfil" class="hidden">
+ <h2>Mi perfil</h2>
+ <div class="card">
+  <p>Operador 001</p>
+  <p>Edad: 38 años</p>
+  <p>Sexo: Masculino</p>
+  <p>Estatura: 170 cm</p>
+  <p>Peso inicial: 108 kg</p>
+  <p>Experiencia: Principiante</p>
+  <p>Equipamiento: Mancuernas ajustables de hasta 10 kg</p>
+  <p>Objetivo: Pérdida de grasa</p>
+ </div>
+ <div class="card">
+  <h3>Privacidad</h3>
+  <p>Los registros de esta versión se guardan en el almacenamiento local del navegador de este dispositivo. No hay sincronización en la nube.</p>
+  <button class="orange" onclick="exportData()">Exportar mis registros</button>
+ </div>
+</section>
+</main>
+
+<nav class="nav">
+ <button class="active" onclick="show('inicio',this)"><span>⌂</span>Inicio</button>
+ <button onclick="show('entreno',this)"><span>⚒</span>Rutinas</button>
+ <button onclick="show('progreso',this)"><span>↗</span>Progreso</button>
+ <button onclick="show('nutricion',this)"><span>◈</span>Nutrición</button>
+ <button onclick="show('ia',this)"><span>✧</span>ARES AI</button>
+</nav>
+<script>
+const get=(key)=>JSON.parse(localStorage.getItem("ares_"+key)||"[]");
+const put=(key,value)=>localStorage.setItem("ares_"+key,JSON.stringify(value));
+function show(id,button){
+ document.querySelectorAll("main section").forEach(s=>s.classList.add("hidden"));
+ document.getElementById(id).classList.remove("hidden");
+ document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
+ if(button)button.classList.add("active");
+}
+function saveProgress(){
+ const w=Number(document.getElementById("weight").value);
+ const waist=document.getElementById("waist").value;
+ const date=document.getElementById("date").value||new Date().toISOString().slice(0,10);
+ if(!w||w<30||w>350){alert("Introduce un peso válido.");return;}
+ const data=get("progress");
+ data.push({weight:w,waist,date});
+ put("progress",data);renderHistory();
+ alert("Registro guardado en este dispositivo.");
+}
+function renderHistory(){
+ const data=get("progress");
+ document.getElementById("history").innerHTML=data.length?data.slice().reverse().map(x=>`<div class="item">${x.date} · <b>${x.weight} kg</b> · Cintura: ${x.waist||"Pendiente"} cm</div>`).join(""):'<p class="muted">Todavía no hay registros.</p>';
+}
+function saveSession(){
+ const data=get("sessions");
+ data.push({date:new Date().toISOString().slice(0,10),session:document.getElementById("session").value,effort:document.getElementById("effort").value,notes:document.getElementById("sessionNotes").value});
+ put("sessions",data);
+ document.getElementById("sessionResult").textContent="Sesión registrada localmente.";
+}
+function saveMeal(){
+ const meal=document.getElementById("meal").value;
+ if(!meal.trim()){alert("Describe la comida.");return;}
+ const data=get("meals");
+ data.push({date:new Date().toISOString().slice(0,10),type:document.getElementById("mealType").value,meal});
+ put("meals",data);renderMeals();
+ document.getElementById("meal").value="";
+}
+function renderMeals(){
+ document.getElementById("mealHistory").innerHTML=get("meals").slice().reverse().map(x=>`<div class="item"><b>${x.type}</b> · ${x.date}<br>${escapeText(x.meal)}</div>`).join("");
+}
+function escapeText(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function askCoach(){
+ const q=document.getElementById("question").value.toLowerCase();
+ let a="Prioriza la constancia, la técnica y la recuperación. Para recomendaciones personalizadas, consulta con un profesional cuando corresponda.";
+ if(q.includes("comida")||q.includes("porción"))a="Prueba el método del plato: mitad verduras, un cuarto proteína y un cuarto carbohidratos. Come despacio y registra tus comidas.";
+ if(q.includes("peso")||q.includes("grasa"))a="Registra tu peso en condiciones similares y observa tendencias, no variaciones de un solo día. Evita dietas extremas.";
+ if(q.includes("dolor")||q.includes("mareo"))a="Detén la actividad. Si tienes dolor torácico, desmayo o dificultad respiratoria intensa, busca atención médica urgente.";
+ document.getElementById("answer").textContent=a;
+}
+function exportData(){
+ const data={progress:get("progress"),sessions:get("sessions"),meals:get("meals")};
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="ares-registros.json";a.click();URL.revokeObjectURL(a.href);
+}
+renderHistory();renderMeals();
+</script>
+</body>
+</html>
